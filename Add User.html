@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Aggiungi Giocatore</title>
+    <style>
+body {font-family: Arial, Helvetica, sans-serif; background-image:url(bgsignup.png); background-size:cover;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: red;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+<div id="form" style="border:1px solid #ccc">
+  <div class="container">
+    <h1 style="color:white">Aggiungi Giocatore</h1>
+    <p style="color:white">Riempire questi campi per creare un account:</p>
+    <hr>
+
+    <label for="email" style="color:white"><b>Email</b></label><br />
+    <input id="email" type="text" placeholder="Enter Email" name="email" required><br />
+
+    <label for="psw" style="color:white"><b>Password</b></label><br />
+    <input id="password" type="password" placeholder="Enter Password" name="psw" required><br />
+
+    <label for="psw-repeat" style="color:white"><b>Ripeti Password</b></label><br />
+    <input id="repeat" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    
+    <p id="p" style="color:white">L'utente aggiunto deve aver accettato le norme sul trattamento dei dati personali.</p>
+
+    <div class="clearfix">
+      
+      <button id="sub" type="submit" class="signupbtn">Registra</button>
+    </div>
+  </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "", /*cut from github version*/
+        authDomain: "vampiri-live-cdc.firebaseapp.com",
+        databaseURL: "https://vampiri-live-cdc.firebaseio.com",
+        projectId: "vampiri-live-cdc",
+        storageBucket: "vampiri-live-cdc.appspot.com",
+        messagingSenderId: "" /*cut from github version*/
+    };
+    firebase.initializeApp(config);
+
+    var form = document.getElementById("sub");
+    form.onclick = function () {
+        var mail = document.getElementById("email").value;
+        var pass = document.getElementById("password").value;
+        var repeat = document.getElementById("repeat").value;
+        
+
+        if (pass == repeat) 
+           
+            firebase.auth().createUserWithEmailAndPassword(mail, pass).then(function (user)
+            {
+                alert("Registrazione avvenuta con successo per " + user.user.email);
+
+
+
+            }, function (error) {
+                // Handle Errors here.
+
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                alert(errorMessage)
+
+            });
+       
+        else {
+            alert("Password Mismatch!");
+        }
+
+    }
+
+</script>
+</body>
+</html>

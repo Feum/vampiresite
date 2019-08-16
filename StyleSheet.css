@@ -1,0 +1,69 @@
+﻿body {
+
+    background-image: url('sheetsatan.png');
+    background-size:cover;
+    height: 106px;
+}
+
+.maintable {
+    position: absolute;
+    top: 3vw;
+    left: 5vw;
+    width: 90vw;
+    height: 127vw;
+
+}
+
+.bigraw {
+    position:absolute;
+    width: 100%;
+    top: 0px;
+    border-spacing:1vw;
+    
+
+}
+
+.attributes {
+    font-family:chiller;
+    font-size:5vw;
+    border: inset;
+    border-width:thin;
+}
+
+.attributesborder {
+    font-family:chiller;
+    font-size:5vw;
+    border: inset;
+    border-width:thin;
+
+}
+
+.input {
+    font-family: 'chiller';
+    position:relative;
+    float:right;
+    height: 100%;
+    font-size:inherit;
+    width:50%;
+    text-align:center;
+    
+    
+}
+
+.salute {
+    position:relative;
+    height: 3vw;
+    cursor:pointer;
+
+}
+
+@font-face {
+    font-family: 'chiller';
+    src: url('fonts/chiller.eot');
+    src: url('fonts/chiller.eot?#iefix') format('embedded-opentype'),
+         url('fonts/chiller.woff') format('woff'),
+         url('fonts/chiller.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    
+}

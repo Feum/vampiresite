@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Scheda del Personaggio</title>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
+</head>
+<body>
+
+    <table class="maintable">
+
+        <tr>
+            <td>
+                        <!--HEADER PG-->
+                <table  class="bigraw">
+                        <tr>
+                        <td class="attributes">
+                            Nome
+                            <input class="input" />
+                        </td>
+                        <td class="attributes" style="color:red;">
+                            EXP
+                            <input class="input" />
+                        </td>
+                        </tr>
+                        <tr>
+                         <td class="attributesborder">
+                            Clan
+                            <select class="input">
+                                <option value="Gang'rel">Gang'rel</option>
+                                <option value="Ventrue">Ventrue</option>
+                            </select>
+
+                        </td>
+                        <td class="attributesborder">
+                            Congrega
+                            <select class="input">
+                                <option value="Gang'rel">Invictus</option>
+                                <option value="Ventrue">Ordo Dracul</option>
+                            </select>
+                        </td>
+                    </tr>
+        
+
+                    <tr>
+                        <td class="attributes">
+                            Virtù
+                            <input class="input" />
+                        </td>
+                         <td class="attributes">
+                            Vizio
+                            <input class="input" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="attributes">
+                            Attacco Fisico
+                            <input class="input" />
+                        </td>
+                        <td class="attributes">
+                            Difesa Fisica
+                            <input class="input" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="attributes">
+                            Velocità
+                            <input class="input" />
+                        </td>
+                        <td class="attributes" style="color:red;">
+                            Volontà
+                            <input class="input" /> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="attributes">
+                            Astuzia
+                            <input class="input" />
+                        </td>
+                        <td class="attributes">
+                            Fermezza
+                            <input class="input" />
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="attributes">
+                            Iniziativa
+                            <input class="input" />
+                        </td>
+                        <td id="saluteBox" class="attributes" style="color:red;">
+                            Salute
+                            
+                        </td>
+
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="bigraw">
+
+                </table>
+            </td>
+        </tr>
+
+    </table>
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "", /*cut from github version*/
+        authDomain: "vampiri-live-cdc.firebaseapp.com",
+        databaseURL: "https://vampiri-live-cdc.firebaseio.com",
+        projectId: "vampiri-live-cdc",
+        storageBucket: "vampiri-live-cdc.appspot.com",
+        messagingSenderId: "" /*cut from github version*/
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="scriptsheet.js"></script> 
+</body>
+</html>
